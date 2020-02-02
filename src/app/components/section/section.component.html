@@ -1,3 +1,12 @@
-<p>
-  section works!
-</p>
+<section class="listCollections">
+  <h4>{{listCollection?.name}}</h4>
+  <div class="clients_slider owl-carousel">
+    <ng-container *ngFor="let info of listCollection?.data">
+      <app-card [infoData]="info"></app-card>
+    </ng-container>    
+  </div>
+  <div class="customButton">
+    <button mat-flat-button color="primary">Ver mais</button>
+  </div>
+</section>
+<hr>

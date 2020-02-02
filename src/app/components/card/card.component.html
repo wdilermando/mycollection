@@ -1,3 +1,9 @@
-<p>
-  card works!
-</p>
+<div class="item">
+  <mat-card class="custom-card">    
+    <img mat-card-image [src]="infoData.img">
+    <mat-card-content>
+      <h3 class="text-truncate" title="{{infoData.title}}">{{infoData.title}}</h3>
+      <star-rating value="{{infoData.stars}}" totalstars="5" checkedcolor="orange" uncheckedcolor="grey" size="24px" readonly="true"></star-rating>
+    </mat-card-content>
+  </mat-card>
+</div> 

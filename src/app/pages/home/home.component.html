@@ -1,3 +1,5 @@
-<p>
-  home works!
-</p>
+<article class="container">
+  <ng-container *ngFor="let collection of collectionListGroupStatus">
+    <app-section [list]="collection"></app-section>
+  </ng-container>  
+</article>

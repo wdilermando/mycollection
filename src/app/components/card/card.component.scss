@@ -1,0 +1,13 @@
+.item {
+    .custom-card {
+        height: 230px;
+        text-align: center;
+        .mat-card-content {
+            h3 {
+                color: #673ab7;
+                font-weight: 500;
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

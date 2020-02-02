@@ -1,0 +1,12 @@
+.listCollections {
+    h4 {
+        color: #909090;
+    }
+    .customButton {
+        margin-top: 1em;
+        text-align: center;
+        .mat-flat-button {
+            text-transform: uppercase;
+        }
+    }
+}
