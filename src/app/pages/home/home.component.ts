@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupByPipe } from 'ngx-pipes';
+import { ActivatedRoute } from '@angular/router';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-home',
@@ -41,13 +43,19 @@ export class HomeComponent implements OnInit {
   
   collectionListGroupStatus: any = []
 
-  constructor(private grouByPipe: GroupByPipe) { }
+  constructor(private grouByPipe: GroupByPipe, private route: ActivatedRoute) {
+    
+    route.params.subscribe(val => {
+      
+      let groupCollection = this.grouByPipe.transform(this.collectionsList, 'status');   
+      Object.keys(groupCollection).map((key)=>{
+        this.collectionListGroupStatus.push({name:key, data:groupCollection[key]})
+      })
+
+    })
+  }
 
   ngOnInit() {
-    let groupCollection = this.grouByPipe.transform(this.collectionsList, 'status');   
-    Object.keys(groupCollection).map((key)=>{
-      this.collectionListGroupStatus.push({name:key, data:groupCollection[key]})
-    })
   }
 
 }

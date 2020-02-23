@@ -1,3 +1,5 @@
-<p>
-  results works!
-</p>
+<article class="container">
+  <ng-container *ngFor="let info of collectionsList">
+    <app-card [infoData]="info"></app-card>
+  </ng-container>  
+</article>
