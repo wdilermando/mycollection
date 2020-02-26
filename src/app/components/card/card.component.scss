@@ -1,11 +1,57 @@
 .custom-card {
-    height: 230px;
-    text-align: center;
-    .mat-card-content {
-        h3 {
-            color: #673ab7;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
+  height: 230px;
+  text-align: center;
+  .mat-card-content {
+    h3 {
+      color: #673ab7;
+      font-weight: 500;
+      font-size: 1.1rem;
+      height: 1.2em;
+      overflow: hidden;
     }
+  }
+  img {
+    // width: -webkit-fill-available;
+    -o-object-fit: contain;
+    object-fit: contain;
+    height: 145px;
+  }
+  .tag-type {
+    float: left;
+    position: relative;
+    background: #673ab7;
+    margin-left: -16px;
+    margin-top: -41px;
+    color: #fff;
+    font-size: 14px;
+    padding: 2px 5px;
+  }
+  .tag-status {
+    float: right;
+    position: relative;    
+    margin-right: -16px;
+    margin-top: -145px;
+    color: #fff;
+    font-size: 14px;
+    padding: 0px 2px;
+    .mat-icon {
+        font-size: 18px;
+        padding-top: 5px;
+    }
+  }
+  .working {
+    background-color: rgb(27, 83, 167);
+  }
+  .watched {
+    background-color: rgb(55, 167, 27);
+  }
+  .wished {
+    background-color: rgb(167, 27, 81);
+  }
+}
+.custom-card:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 5px 7px 0px rgba(60, 60, 60, 0.4);
+  -moz-box-shadow: 0px 5px 7px 0px rgba(60, 60, 60, 0.4);
+  box-shadow: 0px 5px 7px 0px rgba(60, 60, 60, 0.4);
 }

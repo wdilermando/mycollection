@@ -14,6 +14,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { SectionComponent } from './components/section/section.component';
 import { CardComponent } from './components/card/card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthModule } from './auth/auth.module';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ResultsComponent,
     HeaderComponent,
     SectionComponent,
-    CardComponent
+    CardComponent,
+    NotfoundComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +39,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     RatingModule,
-    NgPipesModule
+    NgPipesModule,
+    HttpClientModule,
+    AuthModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+  ],
+  bootstrap: [AppComponent],
+  entryComponents:[ModalComponent]
 })
 export class AppModule { }

@@ -1,0 +1,37 @@
+<div mat-dialog-content class="opa">
+  <div class="row conteudo">
+    <app-card class="col-4" [infoData]="data"></app-card>
+    <mat-card class="col-8" >      
+      <mat-card-content class="text-left">
+        <div class="text-custom-header d-flex flex-column">
+          <span>
+            <p>Título</p>
+            <h4>{{data.title}}</h4>
+          </span>
+        </div>
+        <div class="text-custom-content d-flex justify-content-between">
+          <span>
+            <p>Autor</p>
+            <h4>{{data.author || 'Não informado'}}</h4>
+          </span>
+          <span>
+            <p>Status</p>
+            <h4>{{data.status}}</h4>
+          </span>
+        </div>
+        <div class="text-custom-content d-flex justify-content-between">
+          <span>
+            <p>Sinopse</p>
+            <article>{{data.sinopse || 'Não informado'}}</article>
+          </span>          
+        </div>
+        <div class="text-custom-content d-flex justify-content-between">
+          <span>
+            <p>Minha avaliação</p>
+            <article>{{data.review || 'Não informado'}}</article>
+          </span>          
+        </div>
+      </mat-card-content>    
+    </mat-card>
+  </div>
+</div>

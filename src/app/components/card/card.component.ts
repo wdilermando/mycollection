@@ -11,6 +11,19 @@ export class CardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {  }
+
+  getClass(status){    
+    switch (status) {
+      case 'Vistos recentemente ou em andamento':
+        return {class:'working', icon: 'check_circle_outline'} 
+      case 'Já Visto':
+        return {class:'watched', icon: 'check_circle'}
+      case 'Desejados':
+        return {class:'wished', icon: 'how_to_vote'}  
+      default:
+        return {class:'working', icon: 'offline_pin'}
+    }
+  }
 
 }

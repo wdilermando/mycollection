@@ -1,7 +1,11 @@
 <mat-card class="custom-card">
   <img mat-card-image [src]="infoData.img">
+    <span class="tag-status {{getClass(infoData.status).class}}" title="{{infoData.status}}">
+      <mat-icon >{{getClass(infoData.status).icon}}</mat-icon>
+    </span>
+  <span class="tag-type">{{infoData.type}}</span>
   <mat-card-content>
-    <h3 class="text-truncate" title="{{infoData.title}}">{{infoData.title}}</h3>
+    <h3 title="{{infoData.title}}">{{infoData.title}}</h3>
     <star-rating value="{{infoData.stars}}" totalstars="5" checkedcolor="orange" uncheckedcolor="grey" size="24px"
       readonly="true"></star-rating>
   </mat-card-content>
