@@ -1,6 +1,6 @@
 <article class="container">
-  <section class="d-flex flex-wrap justify-content-start" *ngIf="(collectionsList$ | async)?.length>0;else noItem">    
-    <ng-container *ngFor="let info of (collectionsList$ | async)">
+  <section class="d-flex flex-wrap justify-content-start" *ngIf="collectionsList$ | async as collectionsList; else noItem">    
+    <ng-container *ngFor="let info of collectionsList">
       <app-card class="p-2" [infoData]="info" (click)="openDialog(info)"></app-card>
     </ng-container>
   </section>

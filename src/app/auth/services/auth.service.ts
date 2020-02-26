@@ -35,7 +35,7 @@ export class AuthService {
 
   isAuthenticated(): Observable<boolean> {
     const token = localStorage.getItem('token');
-    if (token) {
+    if (token && !this.subjLoggedIn$.value) {
       return this.checkTokenValidation();
     }
     return this.subjLoggedIn$.asObservable();    

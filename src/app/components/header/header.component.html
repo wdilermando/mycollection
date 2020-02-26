@@ -3,9 +3,17 @@
     <div class="d-flex flex-column align-items-center justify-content-between">
       <h1>MyCollection</h1>
       <p>Meu acervo virtual - <strong>{{(user$|async)?.firstName}}</strong></p>
-      <button mat-icon-button (click)="logout()">
-        <mat-icon>exit_to_app</mat-icon>
-      </button>
+      <div class="d-flex flex-row justify-content-around align-items-center">
+        <button mat-icon-button [routerLink]="['/home']" matTooltip="Início">
+          <mat-icon>home</mat-icon>
+        </button>
+        <button mat-icon-button [routerLink]="['/auth/register']" matTooltip="Registrar usuário">
+          <mat-icon>assignment_ind</mat-icon>
+        </button>
+        <button mat-icon-button (click)="logout()" matTooltip="Sair da aplicação">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </div>
       <div style="width: 80%;">
         <form class="example-form">
           <mat-form-field appearance="legacy">

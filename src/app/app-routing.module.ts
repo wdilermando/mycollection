@@ -6,7 +6,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { AuthGuard } from './auth/auth-guard.service';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'resultados', pathMatch: 'full' },
+  {path: '', redirectTo: 'home', pathMatch: 'full' },
   {path:'home', component: HomeComponent, canActivate:[AuthGuard]},
   {path:'resultados', component: ResultsComponent, canActivate:[AuthGuard]},
   // {path:'**', component: NotfoundComponent}
