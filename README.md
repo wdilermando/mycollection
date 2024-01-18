@@ -1,6 +1,6 @@
 # Acervo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+Personal Project build by Angular to consume of an external API and show a list of movies and books that I read/watch and expect to read in the future.
 
 ## Development server
 
